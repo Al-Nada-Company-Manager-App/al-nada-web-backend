@@ -41,23 +41,23 @@ export class ContactService {
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <title>New Contact Request</title>
         </head>
-        <body style="margin: 0; padding: 0; background-color: #f4f7f6; font-family: Arial, sans-serif; color: #333333;">
-          <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #f4f7f6; padding: 40px 20px;">
+        <body style="margin: 0; padding: 0; background-color: #070d24; font-family: Arial, sans-serif; color: #e2e8f0;">
+          <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #070d24; padding: 40px 20px;">
             <tr>
               <td align="center">
-                <table width="600" cellpadding="0" cellspacing="0" border="0" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05); max-width: 100%;">
+                <table width="600" cellpadding="0" cellspacing="0" border="0" style="background-color: #0a1433; border-radius: 8px; border: 1px solid #1e293b; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.5); max-width: 100%;">
                   
                   <!-- Header -->
                   <tr>
-                    <td align="center" style="background-color: #ffffff; padding: 30px 20px; border-bottom: 3px solid #0a1a4f;">
-                      <img src="https://alnadascientific.com/img/alnada.png" alt="Al Nada Scientific" width="180" style="display: block; max-width: 100%; height: auto;" />
+                    <td align="center" style="background-color: #0a1433; padding: 30px 20px; border-bottom: 2px solid #1e293b;">
+                      <img src="https://alnadascientific.com/img/alnadadr.png" alt="Al Nada Scientific" width="180" style="display: block; max-width: 100%; height: auto;" />
                     </td>
                   </tr>
 
                   <!-- Title -->
                   <tr>
-                    <td align="center" style="background-color: #0a1a4f; padding: 20px;">
-                      <h2 style="color: #ffffff; margin: 0; font-size: 20px; font-weight: normal; letter-spacing: 1px;">NEW CONTACT REQUEST</h2>
+                    <td align="center" style="background-color: #1e3a8a; padding: 20px;">
+                      <h2 style="color: #ffffff; margin: 0; font-size: 18px; font-weight: bold; letter-spacing: 2px;">NEW CONTACT REQUEST</h2>
                     </td>
                   </tr>
 
@@ -67,27 +67,27 @@ export class ContactService {
                       <table width="100%" cellpadding="0" cellspacing="0" border="0">
                         <tr>
                           <td style="padding-bottom: 15px;">
-                            <span style="font-size: 12px; color: #888888; text-transform: uppercase; letter-spacing: 1px;">Customer Details</span>
+                            <span style="font-size: 12px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; font-weight: bold;">Customer Details</span>
                           </td>
                         </tr>
                         <tr>
-                          <td style="background-color: #f8f9fa; border-radius: 6px; padding: 20px; border: 1px solid #eeeeee;">
+                          <td style="background-color: #0f172a; border-radius: 8px; padding: 25px; border: 1px solid #1e293b;">
                             <table width="100%" cellpadding="0" cellspacing="0" border="0">
                               <tr>
-                                <td width="100" style="padding-bottom: 10px; font-weight: bold; color: #555;">Name:</td>
-                                <td style="padding-bottom: 10px; color: #111;">${name}</td>
+                                <td width="100" style="padding-bottom: 12px; font-weight: bold; color: #64748b; font-size: 14px;">Name:</td>
+                                <td style="padding-bottom: 12px; color: #f8fafc; font-size: 15px;">${name}</td>
                               </tr>
                               <tr>
-                                <td width="100" style="padding-bottom: 10px; font-weight: bold; color: #555;">Email:</td>
-                                <td style="padding-bottom: 10px;">
-                                  <a href="mailto:${email}" style="color: #2563eb; text-decoration: none;">${email}</a>
+                                <td width="100" style="padding-bottom: 12px; font-weight: bold; color: #64748b; font-size: 14px;">Email:</td>
+                                <td style="padding-bottom: 12px;">
+                                  <a href="mailto:${email}" style="color: #60a5fa; text-decoration: none; font-size: 15px;">${email}</a>
                                 </td>
                               </tr>
                               ${phone ? `
                               <tr>
-                                <td width="100" style="padding-bottom: 10px; font-weight: bold; color: #555;">Phone:</td>
-                                <td style="padding-bottom: 10px;">
-                                  <a href="tel:${phone}" style="color: #2563eb; text-decoration: none;">${phone}</a>
+                                <td width="100" style="font-weight: bold; color: #64748b; font-size: 14px;">Phone:</td>
+                                <td>
+                                  <a href="tel:${phone}" style="color: #60a5fa; text-decoration: none; font-size: 15px;">${phone}</a>
                                 </td>
                               </tr>
                               ` : ''}
@@ -96,17 +96,17 @@ export class ContactService {
                         </tr>
                       </table>
 
-                      <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top: 30px;">
+                      <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top: 35px;">
                         <tr>
                           <td style="padding-bottom: 15px;">
-                            <span style="font-size: 12px; color: #888888; text-transform: uppercase; letter-spacing: 1px;">Subject</span>
-                            <div style="font-size: 18px; font-weight: bold; color: #0a1a4f; margin-top: 5px;">${subject}</div>
+                            <span style="font-size: 12px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; font-weight: bold;">Subject</span>
+                            <div style="font-size: 20px; font-weight: bold; color: #f8fafc; margin-top: 8px;">${subject}</div>
                           </td>
                         </tr>
                         <tr>
-                          <td>
-                            <span style="font-size: 12px; color: #888888; text-transform: uppercase; letter-spacing: 1px;">Message</span>
-                            <div style="background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 20px; margin-top: 8px; color: #333333; line-height: 1.6; font-size: 15px; white-space: pre-wrap;">${message}</div>
+                          <td style="padding-top: 15px;">
+                            <span style="font-size: 12px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; font-weight: bold;">Message</span>
+                            <div style="background-color: #0f172a; border: 1px solid #1e293b; border-radius: 8px; padding: 25px; margin-top: 12px; color: #cbd5e1; line-height: 1.7; font-size: 15px; white-space: pre-wrap;">${message}</div>
                           </td>
                         </tr>
                       </table>
@@ -115,15 +115,15 @@ export class ContactService {
 
                   <!-- Footer -->
                   <tr>
-                    <td align="center" style="background-color: #f8f9fa; padding: 25px 20px; border-top: 1px solid #eeeeee;">
-                      <p style="margin: 0 0 10px 0; font-size: 13px; color: #666666;">
-                        <strong>Al Nada Scientific Office</strong><br>
+                    <td align="center" style="background-color: #070d24; padding: 30px 20px; border-top: 1px solid #1e293b;">
+                      <p style="margin: 0 0 10px 0; font-size: 13px; color: #94a3b8;">
+                        <strong style="color: #cbd5e1;">Al Nada Scientific Office</strong><br>
                         67 Mahattet ElKoba, Cairo, Egypt
                       </p>
-                      <p style="margin: 0; font-size: 12px; color: #888888;">
-                        <a href="mailto:info@alnadascientific.com" style="color: #666666; text-decoration: underline;">info@alnadascientific.com</a>
+                      <p style="margin: 0; font-size: 13px; color: #64748b;">
+                        <a href="mailto:info@alnadascientific.com" style="color: #94a3b8; text-decoration: underline;">info@alnadascientific.com</a>
                         &nbsp;|&nbsp;
-                        <a href="tel:+201007015047" style="color: #666666; text-decoration: underline;">+20 100 701 5047</a>
+                        <a href="tel:+201007015047" style="color: #94a3b8; text-decoration: underline;">+20 100 701 5047</a>
                       </p>
                     </td>
                   </tr>
@@ -131,7 +131,7 @@ export class ContactService {
                 </table>
                 
                 <!-- Reply Hint -->
-                <p style="text-align: center; font-size: 12px; color: #999999; margin-top: 20px;">
+                <p style="text-align: center; font-size: 12px; color: #64748b; margin-top: 25px;">
                   This email was automatically generated from your website's contact form.<br>
                   You can reply directly to this email to respond to the customer.
                 </p>
