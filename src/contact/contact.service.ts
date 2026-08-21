@@ -22,18 +22,22 @@ export class ContactService {
   }
 
   async sendContactEmail(contactDto: ContactDto): Promise<{ success: boolean; message: string }> {
-    const { name, email, subject, message } = contactDto;
+    const { name, email, phone, subject, message } = contactDto;
     
+    const phoneText = phone ? `\nPhone: ${phone}` : '';
+    const phoneHtml = phone ? `<p><strong>Phone:</strong> ${phone}</p>` : '';
+
     const mailOptions = {
       from: this.configService.get<string>('MAIL_FROM'),
       to: this.configService.get<string>('MAIL_TO'),
       replyTo: email,
       subject: `New Contact Form Submission: ${subject}`,
-      text: `You have received a new contact form submission.\n\nName: ${name}\nEmail: ${email}\nSubject: ${subject}\n\nMessage:\n${message}`,
+      text: `You have received a new contact form submission.\n\nName: ${name}\nEmail: ${email}${phoneText}\nSubject: ${subject}\n\nMessage:\n${message}`,
       html: `
         <h3>New Contact Form Submission</h3>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
+        ${phoneHtml}
         <p><strong>Subject:</strong> ${subject}</p>
         <h4>Message:</h4>
         <p>${message.replace(/\n/g, '<br>')}</p>
