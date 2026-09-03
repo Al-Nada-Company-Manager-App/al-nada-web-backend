@@ -4,7 +4,9 @@ import { ValidationPipe } from '@nestjs/common';
 import { ExpressAdapter } from '@nestjs/platform-express';
 import express from 'express';
 
-const server = express();
+import { Express } from 'express';
+
+const server: Express = express();
 
 async function bootstrap() {
   const app = await NestFactory.create(
@@ -16,12 +18,13 @@ async function bootstrap() {
     ? process.env.FRONTEND_ORIGIN.split(',').map(o => o.trim().replace(/\/$/, ''))
     : [];
   
-  // Guarantee that localhost and the production site are always allowed
+  // Guarantee that localhost and the production sites are always allowed
   const allowedOrigins = [
-    ...envOrigins, 
-    'http://localhost:3000', 
+    ...envOrigins,
+    'http://localhost:3000',
+    'http://localhost:5174',    // nada-admin dev
     'https://alnadascientific.com',
-    'https://www.alnadascientific.com'
+    'https://www.alnadascientific.com',
   ];
 
   app.enableCors({
@@ -34,6 +37,8 @@ async function bootstrap() {
     whitelist: true,
     forbidNonWhitelisted: true,
   }));
+
+  app.setGlobalPrefix('api');
 
   await app.init();
 }

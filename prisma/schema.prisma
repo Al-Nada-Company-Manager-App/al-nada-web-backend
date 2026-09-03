@@ -1,0 +1,44 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_DATABASE_URL")
+}
+
+// ── Admin authentication ───────────────────────────────────────────────────────
+model AdminUser {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  role         String   @default("admin")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@map("admin_users")
+}
+
+// ── Posts (bilingual AR/EN, up to 2 Cloudinary photos) ────────────────────────
+model Post {
+  id        String   @id @default(cuid())
+
+  // Unified content
+  title     String
+  body      String   @db.Text
+
+  // Optional image 1
+  image1Url String?
+  image1Id  String?  // Cloudinary public_id
+
+  // Optional image 2
+  image2Url String?
+  image2Id  String?  // Cloudinary public_id
+
+  published Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("posts")
+}
