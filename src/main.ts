@@ -25,6 +25,7 @@ async function bootstrap() {
     'http://localhost:5174',    // nada-admin dev
     'https://alnadascientific.com',
     'https://www.alnadascientific.com',
+    'https://nada-admin.vercel.app',
   ];
 
   app.enableCors({
