@@ -23,7 +23,7 @@ export class ContactService {
 
   async sendContactEmail(contactDto: ContactDto): Promise<{ success: boolean; message: string }> {
     const { name, email, phone, subject, message } = contactDto;
-    
+
     const phoneText = phone ? `\nPhone: ${phone}` : '';
     const phoneHtml = phone ? `<p><strong>Phone:</strong> ${phone}</p>` : '';
 
@@ -121,7 +121,7 @@ export class ContactService {
                         67 Mahattet ElKoba, Cairo, Egypt
                       </p>
                       <p style="margin: 0; font-size: 13px; color: #64748b;">
-                        <a href="mailto:info@alnadascientific.com" style="color: #94a3b8; text-decoration: underline;">info@alnadascientific.com</a>
+                        <a href="mailto:sales@alnadascientific.com" style="color: #94a3b8; text-decoration: underline;">sales@alnadascientific.com</a>
                         &nbsp;|&nbsp;
                         <a href="tel:+201007015047" style="color: #94a3b8; text-decoration: underline;">+20 100 701 5047</a>
                       </p>
